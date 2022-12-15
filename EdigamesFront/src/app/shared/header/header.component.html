@@ -4,8 +4,8 @@
     <h6 class="header_logo_title">Edigames</h6>
   </div>
   <div class="header_pages">
-    <button class="header_pages_btn" *ngFor="let item of [1,1,1,1,1,1,1]">
-      <p class="header_pages_name">Button</p>
+    <button class="header_pages_btn" *ngFor="let item of pageButtons" (click)="moveToPage(item.path)">
+      <p class="header_pages_name">{{item.name}}</p>
     </button>
   </div>
 </div>

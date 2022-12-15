@@ -1,4 +1,41 @@
 <div class="home">
-
+  <div class="home_section">
+    <div class="preview_wrapper">
+      <div class="preview_description">
+        <p class="preview_description_text">
+          Лучший сайт для игр
+        </p>
+        <p class="preview_description_text">
+          Здесь вы найдете игры на любой вкус
+        </p>
+      </div>
+      <img class="preview_img" src="assets/images/dwarf.png">
+    </div>
+  </div>
+  <div class="home_section">
+    <div class="slider">
+      <img *ngFor="let item of [1,2,3,4,5,6]" class="slider_img" src="assets/images/brand_logo0{{item}}.png">
+    </div>
+  </div>
+  <div class="home_section">
+    <div class="description_wrapper">
+      <div class="description">
+        <p class="description_text">Свежие</p>
+        <p class="description_text">новинки</p>
+      </div>
+      <div class="game_list">
+        <div class="game_wrapper" *ngFor="let item of [1,1,1]">
+          <div class="game_text_wrapper">
+            <p class="game_text">
+              Assasin's creed Origins
+            </p>
+            <p class="game_text">
+              1000 тг
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
