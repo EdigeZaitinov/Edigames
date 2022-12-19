@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" *ngIf="path[2] !== 'login' && path[2] !== 'register'">
   <div class="header_logo">
     <img class="header_logo_img" src="assets/images/Evil_geniuses_logo.svg">
     <h6 class="header_logo_title">Edigames</h6>
@@ -7,5 +7,6 @@
     <button class="header_pages_btn" *ngFor="let item of pageButtons" (click)="moveToPage(item.path)">
       <p class="header_pages_name">{{item.name}}</p>
     </button>
+    <img class="header_pages_login" src="assets/images/login_icon.svg" (click)="moveToPage('auth/login')">
   </div>
 </div>

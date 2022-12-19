@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
+  constructor(private router: Router) {
+  }
 
+  moveToLogin() {
+    this.router.navigate(['auth/login'])
+  }
 }

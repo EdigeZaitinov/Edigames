@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public path: string[] = [];
   public pageButtons = [
     {name: "Home", path: ""},
     {name: "Games", path: "games"},
@@ -18,6 +19,15 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.routerEventsSubscribe()
+  }
+
+  routerEventsSubscribe() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.path = event.url.split('/')
+      }
+    });
   }
 
   moveToPage(path: string) {

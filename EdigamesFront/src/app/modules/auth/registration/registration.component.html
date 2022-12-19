@@ -1,1 +1,22 @@
-<p>registration works!</p>
+<div class="register">
+  <div class="register_back">
+    <img class="register_back_img" src="assets/images/arrow_back.png">
+    <p class="register_back_text">Вернуться</p>
+  </div>
+  <div class="register_form">
+    <p class="register_title">Регистрация</p>
+    <input class="register_input" placeholder="Username">
+    <input class="register_input" placeholder="Password">
+    <div class="register_reg_wrapper" (click)="moveToLogin()">
+      <p class="register_reg_text">
+        Зарегестрированы в Edigames?
+      </p>
+      <p class="register_reg_text">
+        Войти
+      </p>
+    </div>
+    <button class="register_btn">
+      <p>Регистрация</p>
+    </button>
+  </div>
+</div>
