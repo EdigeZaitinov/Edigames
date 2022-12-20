@@ -24,10 +24,11 @@
         <p class="description_text">новинки</p>
       </div>
       <div class="game_list">
-        <div class="game_wrapper" *ngFor="let item of [1,1,1]">
+        <div class="game_wrapper" style="background-image: url({{item.image}}) " *ngFor="let item of games"
+             (click)="openGameDialog(item)">
           <div class="game_text_wrapper">
             <p class="game_text">
-              Assasin's creed Origins
+              {{item.name}}
             </p>
             <p class="game_text">
               1000 тг

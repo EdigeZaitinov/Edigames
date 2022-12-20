@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
+import {HelperService} from "../../core/services/helper.service";
 
 @Component({
   selector: 'app-header',
@@ -9,13 +10,13 @@ import {NavigationEnd, Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
   public path: string[] = [];
   public pageButtons = [
-    {name: "Home", path: ""},
-    {name: "Games", path: "games"},
-    {name: "Games", path: "games"},
-    {name: "Games", path: "games"},
+    {name: "Главная", path: ""},
+    {name: "Игры", path: "games"},
+    {name: "Мои игры", path: "my_games"}
   ]
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private helperService: HelperService) {
   }
 
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   moveToPage(path: string) {
+    this.helperService.backfromAuth$.next(this.path.join('/'))
     this.router.navigate([path])
   }
 }

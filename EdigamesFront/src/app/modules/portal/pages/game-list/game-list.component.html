@@ -1,7 +1,7 @@
 <div class="game_list">
   <div class="game_list_wrapper">
     <div class="section_main">
-      <div class="section_game" *ngFor="let item of [1,1,1,1,1,1,1]">
+      <div class="section_game" *ngFor="let item of [1,1,1,1,1,1,1]" (click)="openGameDialog()">
         <div class="section_game_info">
           <p class="section_game_info_name">
             Assasin's creed origins

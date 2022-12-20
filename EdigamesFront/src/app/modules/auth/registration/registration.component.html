@@ -1,12 +1,18 @@
 <div class="register">
-  <div class="register_back">
+  <div class="register_back" (click)="back()">
     <img class="register_back_img" src="assets/images/arrow_back.png">
     <p class="register_back_text">Вернуться</p>
   </div>
-  <div class="register_form">
+  <div class="register_form" [formGroup]="registerForm">
     <p class="register_title">Регистрация</p>
-    <input class="register_input" placeholder="Username">
-    <input class="register_input" placeholder="Password">
+    <input class="register_input"
+           placeholder="Username"
+           formControlName="username"
+           maxlength="20">
+    <input class="register_input"
+           placeholder="Password"
+           formControlName="password"
+           maxlength="20">
     <div class="register_reg_wrapper" (click)="moveToLogin()">
       <p class="register_reg_text">
         Зарегестрированы в Edigames?
@@ -15,7 +21,7 @@
         Войти
       </p>
     </div>
-    <button class="register_btn">
+    <button class="register_btn" (click)="register()">
       <p>Регистрация</p>
     </button>
   </div>
